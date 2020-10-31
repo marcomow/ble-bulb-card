@@ -1,6 +1,7 @@
 # ble-bulb-card
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs) 
+
 Custom card for [Home Assistant](https://www.home-assistant.io/) to directly control BLE light bulbs through Web Bluetooth.
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 
 Bluetooth interaction can be a real pain in HASS, and sometime you just need to change the color of your cheap light bulbs (Triones, MagicBlue, ...). This custom card comes to the rescue adding a bare-minimum functionality to be able to turn on, off, and change the color.
 
