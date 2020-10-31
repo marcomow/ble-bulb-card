@@ -266,8 +266,6 @@ class PickerColorCommand extends HTMLInputElement {
     }
     connectedCallback() {
 
-        console.log(this);
-
         this.disable();
 
         const convert_hex_to_RGB = (hex) =>
