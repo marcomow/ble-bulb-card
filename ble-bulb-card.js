@@ -72,12 +72,12 @@ class BleBulbCard extends HTMLElement {
 
             interface_bulb.innerHTML = `
         <div class="flex">
-          <button id="button_connect" class="m-auto border-2 px-2 py-1 bg-blue-600"><ha-icon icon="mdi:link-variant"></ha-icon></button>
-          <button id="button_disconnect" class="m-auto border-2 px-2 py-1 bg-blue-600" disabled><ha-icon icon="mdi:link-variant-off"></ha-icon></button>
-          <span id="status_connection" class="m-auto px-2 py-1">disconnected</span>
-            <button is="button-command" value="204, 35, 51" class="m-auto border-2 px-2 py-1"><ha-icon icon="mdi:lightbulb"></ha-icon></button>
-            <button is="button-command" value="204, 36, 51" class="m-auto border-2 px-2 py-1"><ha-icon icon="mdi:lightbulb-off-outline"></ha-icon></button>
-            <input is="picker-color-command" class="m-auto border-2>
+            <button id="button_connect" class="m-auto border-2 px-2 py-1 bg-blue-600"><ha-icon icon="mdi:link-variant"></ha-icon></button>
+            <button id="button_disconnect" class="m-auto border-2 px-2 py-1 bg-blue-600" disabled><ha-icon icon="mdi:link-variant-off"></ha-icon></button>
+            <span id="status_connection" class="m-auto px-2 py-1">disconnected</span>
+            <button is="${ButtonCommand.tag}" value="204, 35, 51" class="m-auto border-2 px-2 py-1"><ha-icon icon="mdi:lightbulb"></ha-icon></button>
+            <button is="${ButtonCommand.tag}" value="204, 36, 51" class="m-auto border-2 px-2 py-1"><ha-icon icon="mdi:lightbulb-off-outline"></ha-icon></button>
+            <input is="${PickerColorCommand.tag}" class="m-auto border-2 px-2 py-1">
         </div>
     `;
 
@@ -254,6 +254,8 @@ Object.assign(ButtonCommand.prototype, is_Disableable);
 customElements.define(ButtonCommand.tag, ButtonCommand, {
     extends: 'button'
 });
+
+
 class PickerColorCommand extends HTMLInputElement {
     static get tag() {
         return 'picker-color-command';
@@ -263,6 +265,8 @@ class PickerColorCommand extends HTMLInputElement {
         this.type = 'color';
     }
     connectedCallback() {
+
+        console.log(this);
 
         this.disable();
 
