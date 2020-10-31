@@ -2,5 +2,5 @@
   "name": "BLE bulb card",
   "content_in_root": true,
   "filename": "ble-bulb-card.js",
-  render_readme: true
+  "render_readme": true
 }
