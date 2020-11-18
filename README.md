@@ -42,4 +42,4 @@ At the current moment only Triones (Flyidea/HappyLighting) and MagicBlue bulbs a
 
 # Known issues
 Please be aware that Web Bluetooth is still an experimental technology and may not work as expected.
-For instance, from my experience with Triones bulbs I noticed that several times the bulb just doesn't connect, while some others is required to connect twice to actually be able to interact with the bulb.
+For instance, from my experience with Triones bulbs I noticed that several times the bulb just doesn't connect, while some others it's required to connect twice to actually be able to interact with the bulb.
