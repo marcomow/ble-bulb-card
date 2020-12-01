@@ -118,10 +118,6 @@ const is_Disableable = {
 }
 
 class InterfaceBulb extends HTMLElement {
-    #device;
-    #server;
-    #service;
-    #characteristic;
     static get tag() {
         return 'interface-bulb';
     }
@@ -139,7 +135,7 @@ class InterfaceBulb extends HTMLElement {
 
         element_button_disconnect.addEventListener('click', async () => {
 
-            this.#device.gatt.disconnect();
+            this.device.gatt.disconnect();
         });
 
         this.disable(true, element_button_disconnect);
@@ -176,9 +172,9 @@ class InterfaceBulb extends HTMLElement {
                 optionalServices: [0xffd5]
             };
 
-            this.#device = await navigator.bluetooth.requestDevice(object_filters);
+            this.device = await navigator.bluetooth.requestDevice(object_filters);
 
-            this.#device.ongattserverdisconnected = (error) => {
+            this.device.ongattserverdisconnected = (error) => {
 
                 this.dispatchEvent(new CustomEvent('ble_connection', {
                     detail: {
@@ -188,11 +184,11 @@ class InterfaceBulb extends HTMLElement {
 
             }
 
-            this.#server = await this.#device.gatt.connect();
+            this.server = await this.device.gatt.connect();
 
-            this.#service = await this.#server.getPrimaryService(0xffd5);
+            this.service = await this.server.getPrimaryService(0xffd5);
 
-            this.#characteristic = await this.#service.getCharacteristic(0xffd9);
+            this.characteristic = await this.service.getCharacteristic(0xffd9);
 
             this.querySelector('#status_connection').innerHTML = '🟢';
 
@@ -214,7 +210,7 @@ class InterfaceBulb extends HTMLElement {
     }
     writeValue(value) {
 
-        this.#characteristic.writeValue(value);
+        this.characteristic.writeValue(value);
 
     }
 }
