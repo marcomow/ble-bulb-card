@@ -5,6 +5,8 @@ Custom card for [Home Assistant](https://www.home-assistant.io/) to directly con
 
 Bluetooth interaction can be a real pain in HASS, and sometime you just need to change the color of your cheap light bulbs (Triones, MagicBlue, ...). This custom card comes to the rescue adding a bare-minimum functionality to be able to turn on, off, and change the color.
 
+NB Web bluetooth is accessible only with HTTPS connections so you MUST access from a page served through HTTPS. As a solution I warmly recommend @PhrantiK's [letsdnscloud add-on](https://github.com/PhrantiK/hassio-addons) that you can use with your custom domain, or the [classic DuckDNS solution](https://techtechandmoretech.com/guides/hass-duckdns/). 
+
 ![card example](https://raw.githubusercontent.com/marcomow/ble-bulb-card/main/images/ble_light-example.png)
 
 # Installation
@@ -43,3 +45,5 @@ At the current moment only Triones (Flyidea/HappyLighting) and MagicBlue bulbs a
 # Known issues
 Please be aware that Web Bluetooth is still an experimental technology and may not work as expected.
 For instance, from my experience with Triones bulbs I noticed that several times the bulb just doesn't connect, while some others it's required to connect twice to actually be able to interact with the bulb.
+
+The card is not working at the moment through the Android app due to WebView restrictions.
