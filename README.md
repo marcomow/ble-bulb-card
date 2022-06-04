@@ -1,5 +1,5 @@
 # ble-bulb-card
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs) 
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/integration) 
 
 Custom card for [Home Assistant](https://www.home-assistant.io/) to directly control BLE light bulbs through Web Bluetooth.
 
